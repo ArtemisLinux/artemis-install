@@ -1,0 +1,27 @@
+[
+    {
+        "enabled": true,
+        "id": "7f07b9dcc9304659935f734c055c7918",
+        "metadata": {
+            "fullname": "xrandr-Microstep-MSI MP241X-BA9H382C00387",
+            "name": "HDMI-1"
+        },
+        "mode": {
+            "refresh": 60,
+            "size": {
+                "height": 1080,
+                "width": 1920
+            }
+        },
+        "overscan": 0,
+        "pos": {
+            "x": 0,
+            "y": 0
+        },
+        "priority": 1,
+        "rgbrange": 0,
+        "rotation": 1,
+        "scale": 1,
+        "vrrpolicy": 2
+    }
+]

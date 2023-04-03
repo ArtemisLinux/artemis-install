@@ -1,0 +1,13 @@
+######################################################
+####                                              ####
+###        ArtemisOS Repository Mirrorlist       ###
+####                                              ####
+######################################################
+#### Entry in file /etc/pacman.conf:
+###     [ArtemisOS]
+###     SigLevel = PackageRequired
+###     Include = /etc/pacman.d/artemismirrorlist
+######################################################
+
+## Github
+Server = https://raw.githubusercontent.com/ArtemisLinux/ArtemisOS-Repo/main/$repo/$arch

@@ -1,0 +1,151 @@
+#!/usr/bin/env bash
+
+## Hyprland installer ##
+# Author: Frazer Grant
+# Version 0.1
+
+### Veriables 
+
+workdir=$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)
+uname=$(whoami)
+
+
+### Functions #####
+#
+#
+#
+#
+
+
+#####################################
+#  Creates a pause function #####
+pause(){
+ read -s -n 1 -p "Press any key to continue . . ."
+ echo ""
+}
+
+######################################
+## Check to make sure the scripts isnt being run as Root or sudo
+
+checkroot(){
+if [[ $EUID -ne 0 ]]; then
+   echo "" 
+   else
+   echo "Please don't run as Root. the script will ask for sudo password when needed."
+   exit 1
+fi
+}
+
+#######################################
+## Welcome message and disclaimer, Just displays info 
+
+welcomemsg(){
+clear
+echo "###############################################################"
+echo "#               Welcome to Artemis Installer                  #"
+echo "#                                                             #"
+echo "# Version: 0.1                                                #"
+echo "# Author: Frazer Grant                                        #"
+echo "# Github: https://github.com/frazzlesgrant1994                #"
+echo "#                                                             #"
+echo "###############################################################"
+}
+
+disclaimer(){
+    echo ""
+    read -r -p "Artemis Installer comes with NO warranties, I am NOT responsible if you break your linux system. 
+Would you like to continue with the installer?  [Y/n]" response
+response=${response,,} # tolower
+  if [[ $response =~ ^((yes|y| )) ]] || [[ -z $response ]]; then
+    echo""
+    clear 
+    welcomemsg
+  else 
+exit 1
+  fi
+}
+
+#######################################
+
+
+## checks to see if the system is Arch, Debian or RHEL\Fedora based 
+
+
+
+########################################
+
+
+
+
+rsync(){
+if command -v yay > /dev/null
+then
+ echo "Rsync is already installed"
+ else 
+   sudo pacman -S rsync --noconfirm  
+fi
+
+}
+
+
+########################################
+
+
+## Installes the required packages for Arch based systems 
+
+artemisinstall(){
+pause
+}
+
+
+##########################################
+
+## copies config files to home dir 
+copyfiles(){
+mv assets/fonts ~/.fonts
+cp -r assets/* ~/.config/
+fc-cache -fv
+}
+
+
+
+
+###########################################
+checksystem(){
+if command -v pacman > /dev/null
+then
+    artemisinstall    
+fi
+
+
+
+
+if command -v apt > /dev/null
+then
+    echo ""
+    echo "We have Detected a Debian based system, this script currently wont work on this system."
+    echo ""
+    pause
+    exit 0
+fi
+
+if command -v dnf > /dev/null
+then
+    echo ""
+    echo "We have Detected a Fedora\RHEL based system, this script currently wont work on this system."
+    echo ""
+    pause
+    exit 0
+fi
+}
+
+
+#########################################
+
+
+## Running the functions
+checkroot
+welcomemsg
+disclaimer
+checksystem
+pause
