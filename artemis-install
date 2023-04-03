@@ -89,13 +89,18 @@ fi
 
 
 ########################################
-
-
+addrepo(){
+sudo mv /etc/pacman.conf /etc/pacman.confbk
+sudo cp -r data/artemisos-mirrorlist /etc/pacman.d/
+sudo cp -r data/pacman.conf /etc/
+sudo pacman -U data/artemisos-keyring-20230121-6-any.pkg.tar.zst --noconfirm
+sudo pacman -Syyu --noconfirm
+}
+########################################
 ## Installes the required packages for Arch based systems 
 
 artemisinstall(){
 sudo pacman -S xorg plasma plasma-wayland-session mesa xorg xorg-server xorg-apps xorg-drivers xorg-xkill xorg-xinit xterm accountsservice aisleriot appstream-qt ark bluedevil bluez-qt breeze-icons dolphin geany guvcview gwenview k3b kcalc kinit konsole kwin kwrite meld neofetch networkmanager-qt okular packagekit-qt5 papirus-icon-theme pavucontrol-qt plasma print-manager qbittorrent sweeper networkmanager latte-dock kvantum sddm sddm-kcm --noconfirm
-sudo pacman -U data/artemisos-keyring-20230121-6-any.pkg.tar.zst --noconfirm
 sudo systemctl enable sddm.service
 sudo systemctl enable NetworkManager.service
 }
@@ -109,7 +114,7 @@ copyfiles(){
 #### Backup of old config
 mv ~/.config ~/configold
 mv ~/.local ~/localold
-sudo mv /etc/pacman.conf /etc/pacman.confbk
+
 #### moves new config to /Home and Skel folders
 
 sudo mkdir /etc/skel/.config
@@ -118,8 +123,7 @@ cp -r data/config ~/.config
 cp -r data/local ~/.local
 sudo cp -r data/config /etc/skel/.config
 sudo cp -r data/local /etc/skel/.local
-sudo cp -r data/artemisos-mirrorlist /etc/pacman.d/
-sudo cp -r data/pacman.conf /etc/
+
 }
 
 
@@ -129,6 +133,7 @@ sudo cp -r data/pacman.conf /etc/
 checksystem(){
 if command -v pacman > /dev/null
 then
+    addrepo
     artemisinstall
     copyfiles 
 fi
