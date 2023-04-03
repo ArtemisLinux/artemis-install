@@ -94,7 +94,9 @@ fi
 ## Installes the required packages for Arch based systems 
 
 artemisinstall(){
-pause
+sudo pacman -S xorg plasma plasma-wayland-session kde-applications
+systemctl enable sddm.service
+systemctl enable NetworkManager.service
 }
 
 
@@ -102,9 +104,20 @@ pause
 
 ## copies config files to home dir 
 copyfiles(){
-mv assets/fonts ~/.fonts
-cp -r assets/* ~/.config/
-fc-cache -fv
+
+#### Backup of old config
+mv ~/.config ~/configold
+mv ~/.local ~/localold
+
+#### moves new config to /Home and Skel folders
+mkdir ~/.config
+mkdir ~/.local
+sudo mkdir /etc/skel/.config
+sudo mkdir /etc/skel/.local
+cp -r data/etc/skel/.config/* ~/.config/
+cp -r data/etc/skel/.local/* ~/.local/
+sudo cp -r data/etc/skel/.config/* /etc/skel/.config/
+sudo cp -r data/etc/skel/.local/* /etc/skel/.local/
 }
 
 
