@@ -13,6 +13,11 @@ _launch=Meta+W,none,Chromium
 new-private-window=none,none,New Incognito window
 new-window=none,none,New Window
 
+[code-oss.desktop]
+_k_friendly_name=Code - OSS
+_launch=Meta+C,none,Code - OSS
+new-empty-window=none,none,New Empty Window
+
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
@@ -220,7 +225,7 @@ activate entry 1=none,Meta+1,Activate Entry 1
 activate entry 10=none,Meta+0,Activate Entry 10
 activate entry 11=Meta+Z,Meta+Z,Activate Entry 11
 activate entry 12=Meta+X,Meta+X,Activate Entry 12
-activate entry 13=Meta+C,Meta+C,Activate Entry 13
+activate entry 13=none,Meta+C,Activate Entry 13
 activate entry 14=none,Meta+V,Activate Entry 14
 activate entry 15=Meta+B,Meta+B,Activate Entry 15
 activate entry 16=Meta+N,Meta+N,Activate Entry 16
@@ -268,11 +273,11 @@ show-on-mouse-pos=none,Meta+V,Show Items at Mouse Position
 
 [mediacontrol]
 _k_friendly_name=Media Controller
-mediavolumedown=none,,Media volume down
-mediavolumeup=none,,Media volume up
+mediavolumedown=none,none,Media volume down
+mediavolumeup=none,none,Media volume up
 nextmedia=Media Next,Media Next,Media playback next
 pausemedia=Media Pause,Media Pause,Pause media playback
-playmedia=none,,Play media playback
+playmedia=none,none,Play media playback
 playpausemedia=Media Play,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
@@ -304,7 +309,9 @@ _launch=Meta+.,Meta+.,Emoji Selector
 ActiveWindowScreenShot=Meta+Print,Meta+Print,Capture Active Window
 CurrentMonitorScreenShot=none,none,Capture Current Monitor
 FullScreenScreenShot=Shift+Print,Shift+Print,Capture Entire Desktop
+OpenWithoutScreenshot=none,none,Launch Spectacle without capturing
 RectangularRegionScreenShot=Meta+Shift+Print,Meta+Shift+Print,Capture Rectangular Region
+WindowUnderCursorScreenShot=Meta+Ctrl+Print,Meta+Ctrl+Print,Capture Window Under Cursor
 _k_friendly_name=Spectacle
 _launch=Print,Print,Launch Spectacle
 
@@ -363,3 +370,7 @@ kcm-lookandfeel=none,none,Global Theme
 kcm-users=none,none,Users
 powerdevilprofilesconfig=none,none,Energy Saving
 screenlocker=none,none,Screen Locking
+
+[yakuake]
+_k_friendly_name=Yakuake
+toggle-window-state=F12,F12,Open/Retract Yakuake

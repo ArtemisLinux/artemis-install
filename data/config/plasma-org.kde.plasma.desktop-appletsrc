@@ -8,7 +8,7 @@ RightButton;NoModifier=org.kde.contextmenu
 [Containments][1]
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
-activityId=7cdb3ab1-df6e-4434-8802-62508f2dad8e
+activityId=28660e56-aed5-47a1-b3e9-0b153268e995
 formfactor=0
 immutability=1
 lastScreen=0
@@ -18,7 +18,10 @@ wallpaperplugin=org.kde.image
 
 [Containments][1][General]
 ToolBoxButtonState=topcenter
-ToolBoxButtonX=444
+ToolBoxButtonX=559
+
+[Containments][1][Wallpaper][org.kde.image][General]
+Image=/home/build/.config/wallpaper/0001.jpg
 
 [Containments][8]
 activityId=
@@ -27,6 +30,8 @@ immutability=1
 lastScreen=0
 location=4
 plugin=org.kde.plasma.private.systemtray
+popupHeight=432
+popupWidth=432
 wallpaperplugin=org.kde.image
 
 [Containments][8][Applets][10]
@@ -41,7 +46,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][8][Applets][11][Configuration]
-PreloadWeight=42
+PreloadWeight=47
 
 [Containments][8][Applets][12]
 immutability=1

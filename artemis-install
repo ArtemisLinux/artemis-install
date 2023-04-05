@@ -100,7 +100,7 @@ sudo pacman -Syyu --noconfirm
 ## Installes the required packages for Arch based systems 
 
 artemisinstall(){
-sudo pacman -S xorg plasma plasma-wayland-session mesa xorg xorg-server xorg-apps xorg-drivers xorg-xkill xorg-xinit xterm accountsservice aisleriot appstream-qt ark bluedevil bluez-qt breeze-icons dolphin geany guvcview gwenview k3b kcalc kinit konsole kwin kwrite meld neofetch networkmanager-qt okular packagekit-qt5 papirus-icon-theme pavucontrol-qt plasma print-manager qbittorrent sweeper networkmanager latte-dock kvantum sddm sddm-kcm --noconfirm
+sudo pacman -S xorg plasma plasma-wayland-session mesa xorg xorg-server xorg-apps xorg-drivers xorg-xkill xorg-xinit xterm accountsservice aisleriot appstream-qt ark bluedevil bluez-qt breeze-icons dolphin geany guvcview gwenview k3b kcalc kinit konsole kwin kwrite meld neofetch networkmanager-qt okular packagekit-qt5 papirus-icon-theme pavucontrol-qt plasma print-manager qbittorrent sweeper networkmanager latte-dock kvantum sddm sddm-kcm papirus-icon-theme --noconfirm
 sudo systemctl enable sddm.service
 sudo systemctl enable NetworkManager.service
 }
